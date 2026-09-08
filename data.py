@@ -3,13 +3,6 @@ headers = {
     "Content-Type": "application/json"
 }
 
-# Создание курьера
-courier_create_body = {
-    "login": "ninja",
-    "password": "1234",
-    "firstName": "saske"
-}
-
 # Создание заказа
 order_create_body = {
     "firstName": "Ploshkin",

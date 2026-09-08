@@ -2,13 +2,6 @@
 import sender_stand_request
 import data
 
-# Функция создания пользователя и получение его токена
-def create_courier():
-        # В переменную user_response сохраняется результат запроса на создание пользователя:
-        courier_response = sender_stand_request.post_create_courier(data.courier_create_body)
-        json_respons = courier_response.json()
-        return json_respons
-
 def create_order():
         order_response = sender_stand_request.post_new_order(data.order_create_body)
         json_respons = order_response.json()
@@ -25,6 +18,5 @@ def get_order_with_track():
 #========================= TEST FUNC ===============================
 # Тест 1. Получение заказа по треку заказа
 def test_get_order_on_track():
-        create_courier()
         create_order()
         get_order_with_track()
