@@ -11,12 +11,12 @@ def get_order_with_track():
         order_track=create_order()
         param=sender_stand_request.generate_params(order_track)
         get_order=sender_stand_request.get_order_track(param)
-        # Проверяется, что код ответа равен 200
-        assert get_order.status_code == 200
+        return get_order.status_code
 
 
 #========================= TEST FUNC ===============================
 # Тест 1. Получение заказа по треку заказа
 def test_get_order_on_track():
-        create_order()
-        get_order_with_track()
+        state=get_order_with_track()
+        # Проверяется, что код ответа равен 200
+        assert state == 200
